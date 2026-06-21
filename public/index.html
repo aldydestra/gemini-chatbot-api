@@ -1,20 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gemini AI Chatbot</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Gemini AI Chatbot</h1>
-    <div id="chat-box" class="chat-box"></div>
-    <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
-      <button type="submit">Send</button>
-    </form>
-  </div>
+  <div class="page-background" aria-hidden="true"></div>
+
+  <main class="app-shell" aria-label="Gemini AI Chatbot">
+    <section class="chat-card">
+      <header class="app-header">
+        <div class="brand-area">
+          <div class="brand-mark" aria-hidden="true">✦</div>
+          <div>
+            <p class="eyebrow">Destra AI Chat Interface</p>
+            <h1>Gemini AI Chatbot</h1>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <span class="status-pill" aria-label="Status aplikasi online">
+            <span class="status-dot" aria-hidden="true"></span>
+            Online
+          </span>
+          <button type="button" id="clear-chat" class="ghost-button">Reset</button>
+        </div>
+      </header>
+
+      <div class="chat-layout">
+        <div id="chat-box" class="chat-box" aria-live="polite" aria-label="Area percakapan">
+          <div id="empty-state" class="empty-state">
+            <span class="empty-icon" aria-hidden="true">✨</span>
+            <h2>Asisten IT Departemen</h2>
+            <p>Silakan tanyakan kebutuhan terkait Programmer, Data Analyst, atau IT Support. Fokus bantuan meliputi pengembangan sistem, analisis data, troubleshooting, dokumentasi teknis, dan dukungan operasional IT.</p>
+
+            <div class="prompt-chips" aria-label="Contoh prompt cepat">
+              <button type="button" class="prompt-chip" data-prompt="Bantu saya review bug atau logic error pada kode berikut:">Programmer</button>
+              <button type="button" class="prompt-chip" data-prompt="Bantu saya menganalisis data, membuat insight, atau menyusun formula/query berikut:">Data Analyst</button>
+              <button type="button" class="prompt-chip" data-prompt="Bantu saya menangani kendala teknis, error aplikasi, jaringan, device, atau user support berikut:">IT Support</button>
+            </div>
+          </div>
+        </div>
+
+        <form id="chat-form" class="chat-form">
+          <label class="visually-hidden" for="user-input">Tulis pesan</label>
+          <div class="input-wrap">
+            <textarea id="user-input" rows="1" placeholder="Tulis pesan Anda..." autocomplete="off" required></textarea>
+            <span id="char-count" class="char-count">0</span>
+          </div>
+          <button type="submit" id="send-button" class="send-button">
+            <span class="button-text">Kirim</span>
+            <span class="button-icon" aria-hidden="true">➜</span>
+          </button>
+        </form>
+
+        <p class="form-hint">Tekan Enter untuk kirim. Gunakan Shift + Enter untuk baris baru.</p>
+      </div>
+    </section>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>

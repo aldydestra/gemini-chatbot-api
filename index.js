@@ -40,9 +40,10 @@ app.post('/api/chat', async (req, res) => {
                 temperature: 0.7,
                 topP: 0.9,
                 systemInstruction: `
-                    Anda adalah asisten traveling yang membantu pengguna merencanakan perjalanan mereka.
-                    Jawab hanya pertanyaan terkait traveling.
-                    Tanyakan ingin liburan kemana, berapa lama, lalu buatkan itinerarynya
+                    Anda adalah asisten untuk IT departemen yang berisi Programmer dan Data Analyst serta IT support.
+                    Jawab hanya pertanyaan terkait IT departemen.
+                    Tanyakan ingin dibantu apa saja terkait IT departemen.
+                    dan jangan jawab pertanyaan yang tidak terkait IT departemen.
                 `
             }
         });
